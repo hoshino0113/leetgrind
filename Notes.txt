@@ -84,9 +84,9 @@ max_subarray:
 
 The core idea is that, we keep a max_sum at all time, and update it whenever needed. This 'whenever needed' depends on:
 - If the new element is positive:
-    - If the current max sum is < 0, we simply let that new element take the 'lead' and it becomes the max_sum. Since no other
+    - If the current sum is < 0, we simply let that new element take the 'lead' and it becomes the max_sum. Since no other
     subarray came before it has a greater sum than it. Rememember to update the current sum to equal to this element
-    - If the current max sum is > 0, we add it to the current sum, and update the max sum
+    - If the current sum is > 0, we add it to the current sum, and update the max sum
     - We update the max_sum by max(current_sum, max_sum)
 - If the new element is negative:
 we need to consider:
@@ -99,5 +99,58 @@ we need to consider:
         which means that we are exploring a new subarray, and so that the current sum must be 0
         In case of current_sum < 0, which means all previous subarrays are negative, finding max_sum simply becomes finding the 
         negative value with the smallest absolute value. Therefore, we update max_sum with max(num, max_sum)
+
++++++++++++++++++++++++++++++++++++++++++
+
+prod_subarray
+
+FUCK THIS question
+We need to find the subarray such that its product is the largest, there WILL BE negative and 0 present!!
+
+The crux of the issue is that we need to figure out how to handle that 0 and negative number cases, which
+is PAIN IN THE FUCKING ASS
+
+Here are some examples for later use: [2,-5,-2,-4,3], [-9, 0, -10]
+and to solve this issue, we need to consider the following cases:
+- All number a positive, which is easy, just multiply them all up
+- If contains negative number(s):
+    - If the current product is positive, encounter a negative number immediately turn that to negative
+    and likely to be small
+    - If the current product is negative, encounter a negative number immediately turn that to positive
+    and likely to be large
+    - The degree of "Big or Small" depends on how "big or small" the current product is, therefore, we need
+    a way to track that "current product"
+- To do that, we keep track of the current_max and current_min for the current largest and smallest product,
+  but note that they NOT the largest nor smallest product in the entire array!!
+
+In the code, we derive them from max(tmp_max, tmp_min, num) and min(tmp_max, tmp_min, num), let me explain:
+- current_max can be the new current_min if multiplied by a negative number!
+- current_min can be the new current_max if multiplied by a negative number!
+- current num can also be the new current max or new current min!
+
+Exmaple: [2, -5, -2, -4, 3]
+1>>>: tmp_max = current_max * 2 = 1 * 2 = 2, tmp_min = current_min * 2 = 1 * 2 = 2
+    current_max = max(num, tmp_max, tmp_min) = max(2, 2, 2) = 2
+    current_min = min(num, tmp_max, tmp_min) = min(2, 2, 2) = 2
+    max_prod = max(max_prod, current_max) = max(2, 2) = 2
+2>>>: tmp_max = current_max * -5 = 2 * -5 = -10, tmp_min = current_min * -5 = 2 * -5 = -10
+    current_max = max(num, tmp_max, tmp_min) = max(-5, -10, -10) = -5
+    current_min = min(num, tmp_max, tmp_min) = min(-5, -10, -10) = -10
+    max_prod = max(max_prod, current_max) = max(2, -5) = 2
+3>>>: tmp_max = current_max * -2 = -5 * -2 = 10, tmp_min = current_min * -2 = -10 * -2 = 20
+    current_max = max(num, tmp_max, tmp_min) = max(-2, 10, 20) = 20
+    current_min = min(num, tmp_max, tmp_min) = min(-2, 10, 20) = -2
+    max_prod = max(max_prod, current_max) = max(2, 20) = 20
+4>>>: tmp_max = current_max * -4 = 20 * -4 = -80, tmp_min = current_min * -4 = -2 * -4 = 8
+    current_max = max(num, tmp_max, tmp_min) = max(-4, -80, 20) = 20
+    current_min = min(num, tmp_max, tmp_min) = min(-4, -80, 8) = -80
+    max_prod = max(max_prod, current_max) = max(2, 20) = 20
+5>>>: tmp_max = current_max * 3 = -80 * 3 = -240, tmp_min = current_min * 3 = 8 * 3 = 24
+    current_max = max(num, tmp_max, tmp_min) = max(3, -240, 24) = 24
+    current_min = min(num, tmp_max, tmp_min) = min(3, -240, 24) = -240
+    max_prod = max(max_prod, current_max) = max(20, 24) = 24
+
+- If there is 0, we simply reinitalize current_max and min to 1 to prevent the multiplication from broken.
+(since 0 bascially cut the array into two parts)
 
 +++++++++++++++++++++++++++++++++++++++++
