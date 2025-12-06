@@ -1,0 +1,103 @@
+December 4, 2025
+Note to all leetcode questions have done
+
+
++++++++++++++++++++++++++++++++++++++++++
+
+two_sum:
+
+In order to do this question, we used list, hashmap and iteration in the solution
+List has the syntax of
+- solution[1, 2, 3, 4]
+- solution.index(2) will return the index of 2 in the solution
+
+Hashmap has the syntax of
+- store_value = {
+    key : value
+}
+- Both key and value can be int, bool, string
+To add a value to a hashmap
+- store_value[1] = 2
+To check if key '1' is in the map:
+- if 1 in store_value -> return true if exists
+
+We have also noticed that to make our iterator more efficient/conventional, we should use enum instead of i = 0 at the begining:
+for i, num in enumerate(nums):
+            complement = target - num
+            if complement in store_value:
+                return [store_value[complement], i]
+
+1 takeaway:
+When we know the brute force to solve this issue, to optimize the solution, we can think in these two directions:
+- How can we make one specific part of the algorithm faster? (In this case, how can we make the search faster)
+- Consider 'Space wise' solution: How can we sacrifice a bit space to make the algorithm faster?
+
++++++++++++++++++++++++++++++++++++++++++
+
+buy_stock:
+
+Keep the min price, and a record of max_profit so far.
+Then find the max of current price - min price and the max_profit
+update min price when the new price is lower than that price.
+Initial thought was correct:
+"          If we found a elemnet that is smaller than the element we are currrently checking (lets call it c), we record
+#           the current highest profit and immediately change our left pointer to that element."
+Because it means that if we have any higher price later on, the c must be less profitable. But, in case of this:
+[6, 20, 4, 7], we keep the max_profit which is 14 (20 - 6) and move on from 4.
+
++++++++++++++++++++++++++++++++++++++++++
+
+contain_duplicates
+
+Use hashmap to solve it faster
+
++++++++++++++++++++++++++++++++++++++++++
+
+prod_array_noself: Product of an array except itself
+
+In this question, we used(or tried) the new syntax:
+- insert(index, element) for inserting an element into the array. However, this has a bad runtime when index is always 0
+we need to shift all the element right by one, which will result O(n) * O(n) = O(n**2) times
+- for i in range(start, stop, step) loop. where start is the starting index, stop is the stopping index, and step is how much
+step we should jump each time.
+if we have (len(array) - 1, -1, -1), it means we want to start from the back of the array, and stop at index -1 which means 
+loop through index 0 and stop, and for each loop, we have -1 step, which means we would like to count backwards by 1 each time
+
+This question can be solved by brute force, but the runtime would be O(n**2) which is terrible
+Can we use hashmap? Not that I can think of
+Therefore, we used prefix and suffix products to solve this issue.
+A prefix product is that we initialize an array such that(lets call it prefix_product): prefix_product[i] = the product of all
+the elements prior to i.
+A suffix product is that we initialize an array such that(lets call it suffix_product): suffix_product[i] = the product of all
+the elemets after i.
+Therefore, the problem is solvable by simply multiply the prefix and suffix product together:
+- For i, we would like to know the product of the array except i 
+- neither the prefix product of i and the suffix product of i contain i. 
+- Therefore, by multiplying prefix_product[i - 1] * suffix_product[i + 1], we get the product of the array other than i
+
+The runtime for this is O(n), and the space is also 3O(n). 
+There is a better way to solve it in space O(1).
+
++++++++++++++++++++++++++++++++++++++++++
+
+max_subarray:
+
+The core idea is that, we keep a max_sum at all time, and update it whenever needed. This 'whenever needed' depends on:
+- If the new element is positive:
+    - If the current max sum is < 0, we simply let that new element take the 'lead' and it becomes the max_sum. Since no other
+    subarray came before it has a greater sum than it. Rememember to update the current sum to equal to this element
+    - If the current max sum is > 0, we add it to the current sum, and update the max sum
+    - We update the max_sum by max(current_sum, max_sum)
+- If the new element is negative:
+we need to consider:
+    - If the current sum + element > 0, which means that the current sum is positive and > element, we update the current_sum but
+    do not update the max_sum, since adding a negative number must not increase the total sum
+    - If the current sum + element < 0, this means that either:
+        - Current_sum > 0 but < element, or
+        - Current_sum < 0, meaning that all number we have encountered so far are negative
+        In both cases, we need to set our current sum to 0 because in case of current_sum > 0, we would like to skip that element,
+        which means that we are exploring a new subarray, and so that the current sum must be 0
+        In case of current_sum < 0, which means all previous subarrays are negative, finding max_sum simply becomes finding the 
+        negative value with the smallest absolute value. Therefore, we update max_sum with max(num, max_sum)
+
++++++++++++++++++++++++++++++++++++++++++
