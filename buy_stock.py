@@ -1,3 +1,25 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+
+
+        """
+        By tracking the current max profit and min price, we are able to get the max profit with one pass
+        """
+        max_profit = 0
+        min_price = 10**4 + 1 #Constraints provided by the question
+
+        for price in prices:
+            if price < min_price:
+                min_price = price
+
+            max_profit = max(max_profit, price - min_price)
+
+        return max_profit
+    
 # class Solution(object):
 #     def maxProfit(self, prices):
 #         """
