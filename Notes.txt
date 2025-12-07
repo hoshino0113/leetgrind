@@ -154,3 +154,8 @@ Exmaple: [2, -5, -2, -4, 3]
 (since 0 bascially cut the array into two parts)
 
 +++++++++++++++++++++++++++++++++++++++++
+
+min_array: 
+find the minimun element in a sorted and rotated array
+Use a method similar to binary search.
+In binary search, we have L and R pointer, middle pointer, we update them based on conditions
