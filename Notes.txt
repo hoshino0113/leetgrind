@@ -212,3 +212,23 @@ is sorted, we increase the l. (remember to skip any duplicate) If > 0, then we d
 - And remember, we do that for every element, left to right
 
 +++++++++++++++++++++++++++++++++++++++++
+
+most watery containter:
+
+Intuition: We use two pointers with greedy algorithm to solve this issue:
+- Only move the pointer that points to a smaller bar 
+- Calculate the area for each step
+- Each step, we ask: Is the new area bigger than the max area we've seen? If so, update the max area. If not, then forget about it and move on
+
+Why we should move the pointer that points to smaller bar?
+Because the area of the bucket depends on the lower bar(bucket effect, where shortest stave decide the max water volume can be held), therefore:
+- If we move the taller pointer: The total area is guarentee to decrease -> even if the next stave is taller, the other lower stave is still there,
+the area must decrese since the width decrease. 
+- If we move the smaller pointer: We might move to a taller stave which outweight the decrease in width(which is always -1 per step), and therefore
+we might have an area increase
+- Update the max_area we have encountered each step (greedy)
+-Until two pointers meet, we repeat the process
+
+A greedy algorithm only focus on the local optimun solution without tracking and going back, meanwhile, it does not destroy the optimun solution globally
+
++++++++++++++++++++++++++++++++++++++++++
