@@ -248,3 +248,13 @@ we keep doing this until b = 0
 Important concept to know:
 - Ones complement: Flip all the bits
 - Twos complement: Flip all the bits and plus 1
+
++++++++++++++++++++++++++++++++++++++++++
+
+hammingWeight
+
+Find the number of '1' bit of the int
+
+1. Use & 1 operator, we get the LSB (either 1 or 0)
+2. Right shift the number by 1 every iteration and repeat step 1
+3. Accumulate the number of 1s and return it
