@@ -232,3 +232,19 @@ we might have an area increase
 A greedy algorithm only focus on the local optimun solution without tracking and going back, meanwhile, it does not destroy the optimun solution globally
 
 +++++++++++++++++++++++++++++++++++++++++
+
+bit_sum.java
+
+add two numbers together without using + or -
+
+Use bitwise algorithm to solve this problem
+
+a ^ b returns the sum without carries
+a & b returns the carries of the sum
+<< # shifts the bit by #
+
+we keep doing this until b = 0
+
+Important concept to know:
+- Ones complement: Flip all the bits
+- Twos complement: Flip all the bits and plus 1
