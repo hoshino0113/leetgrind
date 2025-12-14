@@ -159,3 +159,56 @@ min_array:
 find the minimun element in a sorted and rotated array
 Use a method similar to binary search.
 In binary search, we have L and R pointer, middle pointer, we update them based on conditions
+
+
++++++++++++++++++++++++++++++++++++++++++
+
+find_rotated_array:
+find the target value in a sorted and rotated array in O(log(n)) time
+Very very similar to min_array, which is find the minimum element in the array, but with a catch
+
+Intuitively, we shoul use binary search to solve this issue, which means that we need:
+- Left pointer
+- Right pointer
+- Middle pointer
+and we update them depends on the scenario
+
+So what are these scenarios?
+
+Remember that the array is sorted and rotated, so it means that we have at least half of the array follows
+a single pattern: Either increasing or decreasing
+
+1. If the nums[mid] >= nums[l], it means that everything on the LHS will be smaller than the nums[mid]
+2. If the nums[mid] < nums[l], it means that everything on the RHS will be larger than the nums[mid]
+
+For 1, 
+- if the target is larger than nums[mid], great, we ONLY need to search in the RHS, since everything on the
+LHS will be smaller than the nums[mid]. Update l = mid + 1
+- if the target is smaller than nums[mid], we need to choose which side to look for the target:
+    a. Everything on the LHS is smaller than the mid, but it doesn't mean target is greater than all, since target < mid
+    therefore, we compare the target with nums[l]: If it's bigger than it, but smaller than mid, then we ONLY search LHS. r = mid - 1
+    b. Otherwise, on the RHS, we might still have some values < mid, and since target < nums[l], we search RHS! l = mid + 1
+
+For 2, nums[mid] < nums[l]
+- If the target is < nums[mid], we ONLY need to search the LHS since everything on the RHS will be > nums[mid] and
+certainly larger than the target. Update r = mid - 1
+- If the target is > nums[mid]:
+    a. if target < nums[l], meaning that we search on the RHS
+    b. if target > nums[l], we search on LHS, because there might be some values on LHS > nums[mid]
+
+
+
++++++++++++++++++++++++++++++++++++++++++
+three_sum problem
+
+Our own approach ultilized the two-sum algorithm, it is correct but exceeded time
+
+The approach we learned is that:
+- First we sort the array, so we know the order and can skip any duplicate(as requested by the question, no duplicate)
+- We then for each element, initialze two pointers l and r, where l = i + 1 and r = len(nums) - 1
+- The idea is that we keep summing the three numbers n, nums[l], nums[r], if the sum < 0, and since the array
+is sorted, we increase the l. (remember to skip any duplicate) If > 0, then we decrese the r.
+- If the sum is 0, then append these three elements to the result and keep increasing l.
+- And remember, we do that for every element, left to right
+
++++++++++++++++++++++++++++++++++++++++++
