@@ -274,3 +274,23 @@ Reverse linkedlist:
 
 we need two intermediate variable: previous pointer, and the next pointer to store the
 respecting values of the current node (because we are changing them later)
+
++++++++++++++++++++++++++++++++++++++++++
+
+missing num
+
+// we can sort the array and go through it one by one, in O(log(n)) time
+// however, we iterate through the entire array, and while we do that, we:
+// - Add up i to a variable a, and add up nums[i] to another variable b.
+// - once we hit the last iteration, we simply substract b from a to get the result
+
+
+However, a more novel approach to this question is using bitwise manipulation!
+
+Recall that XOR operator only returns true in a ^ b if and only if either a or b is true but not both
+XOR is also associative/commutative, which means that the order doesn't matter!
+
+Therefore, since we know the number ranges from 0 to n, where n is the length of the array, we can XOR 
+all the numbers together and whats left is the num that is missing.
+- This is because we are guaranteed to get 0 if two same numbers XOR with each other, since they have the same bits
+- Therefore, whats left must be the missing number that no other number can xor with it 
