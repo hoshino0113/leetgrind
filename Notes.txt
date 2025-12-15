@@ -302,3 +302,15 @@ reverse bit
 >> is bit left shift, it will pad left with the original MSB (0s if 0, 1s if 1)
 >>> is logical left bit shift, it will pad left with 0s
 << is bit right shift, it always pad right with 0s
+
+
++++++++++++++++++++++++++++++++++++++++++
+
+find cycle
+
+use two pointers, a fast and slow pointers
+the fast pointer will travel twice as fast as the slow pointer.
+Therefore, if there is a cycle, the fast pointer will catch up with the slow pointer very soon
+
+
++++++++++++++++++++++++++++++++++++++++++
