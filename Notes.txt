@@ -294,3 +294,11 @@ Therefore, since we know the number ranges from 0 to n, where n is the length of
 all the numbers together and whats left is the num that is missing.
 - This is because we are guaranteed to get 0 if two same numbers XOR with each other, since they have the same bits
 - Therefore, whats left must be the missing number that no other number can xor with it 
+
+
++++++++++++++++++++++++++++++++++++++++++
+reverse bit
+
+>> is bit left shift, it will pad left with the original MSB (0s if 0, 1s if 1)
+>>> is logical left bit shift, it will pad left with 0s
+<< is bit right shift, it always pad right with 0s
