@@ -319,3 +319,12 @@ merge linked list
 
 be mindful for the pointers
 need a new head pointer that points to the result linked list for return
+
+
++++++++++++++++++++++++++++++++++++++++++
+
+remove nth node from a linked list:
+
+Use two pointer, fast pointer is excatly n steps ahead of the slow pointer
+
+Important: Use a dummy pointer before the head, so we dont have to deal with the edge case anymore
