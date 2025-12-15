@@ -267,3 +267,10 @@ Given an integer n, return an array ans of length n + 1 such that for each i (0 
 ans[i] is the number of 1's in the binary representation of i.
 
 use hammingWeight as a helper function to do it for each i to n
+
++++++++++++++++++++++++++++++++++++++++++
+
+Reverse linkedlist:
+
+we need two intermediate variable: previous pointer, and the next pointer to store the
+respecting values of the current node (because we are changing them later)
