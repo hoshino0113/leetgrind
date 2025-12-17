@@ -328,3 +328,15 @@ remove nth node from a linked list:
 Use two pointer, fast pointer is excatly n steps ahead of the slow pointer
 
 Important: Use a dummy pointer before the head, so we dont have to deal with the edge case anymore
+
+
++++++++++++++++++++++++++++++++++++++++++
+Reorder lined list:
+
+
+-We first reverse the second half (the .next for the last node of the reversed second half list should be null)
+-Change the .next pointer in the last node of the first half list to null (important!)
+- perform insertion
+
+to get the first and second half list, we use a slow and fast pointers, where the fast pointer traverses twice as fast.
++++++++++++++++++++++++++++++++++++++++++
