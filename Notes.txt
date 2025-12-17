@@ -340,3 +340,33 @@ Reorder lined list:
 
 to get the first and second half list, we use a slow and fast pointers, where the fast pointer traverses twice as fast.
 +++++++++++++++++++++++++++++++++++++++++
+
+
+valid anagram
+
+we learned Hasdmap in java:
+HashMap<Character, Integer> dictionary = new HashMap<>();//where change the type of key and values
+as needed.
+
+HashMap.get(key) // read the value
+HashMap.put(key, valueToBePut) // update value, if none, add new
+HashMap.containsKey(key) //check if the key exists
+
+We also learn string:
+string is immutable, meaning that:
+string a = "Hello"
+a is a refernece to "Hello" where the actual string sits in string pool
+
+string b = "Hello"
+
+a == b will be true since they are references to the same string in the string pool (yes, java will
+check if the string exists in the string pool first)
+
+however, to compare the content of a and b, we should use:
+a.equals(b)
+
+we can also access the nth char of a string by:
+string a = "Hello";
+char b = a.charAt(n)
+
++++++++++++++++++++++++++++++++++++++++++
