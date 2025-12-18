@@ -370,3 +370,11 @@ string a = "Hello";
 char b = a.charAt(n)
 
 +++++++++++++++++++++++++++++++++++++++++
+
+group anagram
+
+we first convert all the string to char array
+sort the array to make it a key
+put this into the hashmap (check if the key already exists first)
+iterate through the hashmap, then append all the elements into the list!
+
