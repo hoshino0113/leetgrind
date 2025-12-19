@@ -1,5 +1,4 @@
 // We loop through all the string(s) in the array, and for each of them:
-// - check if they are empty, if so, add them to the hashmap directly
 // - convert the string to a array of chars O(K)
 // - sort the array of chars in O(k(log(k)))
 // - convert it back to string
