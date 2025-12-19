@@ -13,12 +13,12 @@ class Solution {
         HashMap<String, List<String>> dictionary = new HashMap<>();
         List<List<String>> res = new ArrayList<>();
 
-        for (String s: strs) {
+        for (String s : strs) {
             String key = "";
             if (s.equals("") == false) {
-            char[] charArray = s.toCharArray();
-            Arrays.sort(charArray); // sort the char array
-            key = new String(charArray); // convert it back to string
+                char[] charArray = s.toCharArray();
+                Arrays.sort(charArray); // sort the char array
+                key = new String(charArray); // convert it back to string
             }
 
             if (dictionary.containsKey(key) == false) { // if does not contain key
