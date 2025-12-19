@@ -9,11 +9,11 @@ class Solution {
         while (shiftNum >= 0) {
             int lsb = 0;
             lsb = targetNum & 1;
+            
             if (lsb == 1) {
                 hammingWeight += 1;
-            } else {
-                hammingWeight = hammingWeight;
-            }
+            } 
+
             shiftNum -= 1;
             targetNum = targetNum >> 1;
         }
