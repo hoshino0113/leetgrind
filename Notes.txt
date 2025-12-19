@@ -378,3 +378,21 @@ sort the array to make it a key
 put this into the hashmap (check if the key already exists first)
 iterate through the hashmap, then append all the elements into the list!
 
++++++++++++++++++++++++++++++++++++++++++
+
+valid parenthesis
+
+we learned how to use stack in java to solve this issue
+specifically, we use Deque!!
+
+just like list, we cant instantiate list since its just an interface, we have to use ArrayList
+For Deque, its ArrayDeque:
+Deque<Character> stack = new ArrayDeque<>();
+
+for comparisom:
+
+Character is a wrapper class of char, same applies to int/Integer, str/String
+Character is a reference to the object, therefore, when comparing two Character, we should use .equals()
+auto boxing and unboxing for char and Character comparison be done, so just use ==
+
++++++++++++++++++++++++++++++++++++++++++
