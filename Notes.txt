@@ -391,7 +391,7 @@ Deque<Character> stack = new ArrayDeque<>();
 
 for comparisom:
 
-Character is a wrapper class of char, same applies to int/Integer, str/String
+Character is a wrapper class of char, same applies to int/Integer
 Character is a reference to the object, therefore, when comparing two Character, we should use .equals()
 auto boxing and unboxing for char and Character comparison be done, so just use ==
 
