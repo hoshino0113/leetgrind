@@ -396,3 +396,22 @@ Character is a reference to the object, therefore, when comparing two Character,
 auto boxing and unboxing for char and Character comparison be done, so just use ==
 
 +++++++++++++++++++++++++++++++++++++++++
+
+valid palindrome:
+determine if a string is symmetrical
+
+remember! String is immutatble!
+String is immutatble!
+String is immutatble!
+String is immutatble!
+String is immutatble!
+String is immutatble!
+
+String is immutatble!
+String is immutatble!String is immutatble!
+
+we learned s.replaceAll("[^a-z]","") meaning replace everything with "" that are NOT a-z. ^ means NOT in regex
+
+And yes just use two pointers to solve this issue.
+
++++++++++++++++++++++++++++++++++++++++++
