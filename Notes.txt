@@ -448,3 +448,11 @@ to compare it with the maxLongest. Repeat the same steps for the next i
 Until the master loop terminates, we will have the maxLongest ready for return.
 
 +++++++++++++++++++++++++++++++++++++++++
+
+palindrom subarray
+
+return the total number of palindrom subarray in the string
+
+similiar to max palindrome! but just keep track of the total number and thats it
+
++++++++++++++++++++++++++++++++++++++++++
