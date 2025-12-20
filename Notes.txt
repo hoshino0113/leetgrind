@@ -423,3 +423,28 @@ use sliding windows techique: There is no need to repeat works that we have alre
 we need to have two pointers: Left and right. and adjust them as needed:
 
 This question is a good demo, please see the inline comment!
+
++++++++++++++++++++++++++++++++++++++++++
+
+max palindrome:
+The runtime is O(n**2), but there is a better solution that is running at O(n) but not recommended
+Use two pointers left and right, but they start expanding from the center, rather than from the start
+
+WE need to consider all the possible centers of the palindrome:
+Odd center: All the char in the string can be the odd centers
+Even center: Between two chars, there is a center.
+In total, we have n + (n - 1) = 2n - 1 centers
+
+For odd: two pointers start from left = right
+For even: right = left + 1
+
+Main idea: We have a master loop such that i = 0, i++ until i = s.length()
+
+for each i, we have two while loops, one for odd center and the other for even center.
+Each while loop will expand on its own and terminates once the charAt(left) and right's differs
+Record the localLongest word for each while loop and compare which one is longer and use that one
+to compare it with the maxLongest. Repeat the same steps for the next i
+
+Until the master loop terminates, we will have the maxLongest ready for return.
+
++++++++++++++++++++++++++++++++++++++++++
