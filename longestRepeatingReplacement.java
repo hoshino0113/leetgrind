@@ -14,6 +14,8 @@ Therefore, we keep track of the most frequent char we have seen from the beginni
 */
 
 
+//ya this question is hard for now :(
+
 
 class Solution {
     public int characterReplacement(String s, int k) {
