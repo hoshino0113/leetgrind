@@ -456,3 +456,11 @@ return the total number of palindrom subarray in the string
 similiar to max palindrome! but just keep track of the total number and thats it
 
 +++++++++++++++++++++++++++++++++++++++++
+
+longestRepeatingReplacement
+
+core idea is the window size and when to change the window size.
+keep track of the most frequent char we have seen is the crux of this issue
+please see the inline comment
+
++++++++++++++++++++++++++++++++++++++++++
