@@ -415,3 +415,11 @@ we learned s.replaceAll("[^a-z]","") meaning replace everything with "" that are
 And yes just use two pointers to solve this issue.
 
 +++++++++++++++++++++++++++++++++++++++++
+
+max substring
+
+use sliding windows techique: There is no need to repeat works that we have already done.
+
+we need to have two pointers: Left and right. and adjust them as needed:
+
+This question is a good demo, please see the inline comment!
