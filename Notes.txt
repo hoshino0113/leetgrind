@@ -472,3 +472,12 @@ recursively call the function itself! (Good old memory)
 it might be scary tho but now we need to use it
 and nothing to be afraid of :)
 
++++++++++++++++++++++++++++++++++++++++++
+
+is same tree:
+
+recursively call the function itself!
+
+two trees are the same iff both reach their leaves without any false return
+
++++++++++++++++++++++++++++++++++++++++++
