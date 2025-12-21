@@ -497,3 +497,24 @@ target subtree, it still fails!
 
 Please see the inline comment for ideaas
 +++++++++++++++++++++++++++++++++++++++++
+
+
+binaryOrderTraversal
+
+We need to print out [[3],[9,20],[15,7]] where each inner list contains the node value for that level
+
+- We learned queue (FIFO) : Queue<TreeNode> theTree = new LinkedList<>(); Queue is an interface, it 
+can not be instantiated.
+- Queue operations:
+    a. theTree.offer(a) : Add a to the back. .add() also works but may throw error
+    b. .peek() : peek the head value (the oldest value)
+    c. .poll() : get the oldest value and remove it from the queue
+- Reviewed List<>:
+    a. List is an interface, we need to instantiate another lower class to List: ArrayList, LinkedList etc..
+    b. We need to always initialize the List before use it. List<Integer> a = new ArrayList<>();
+    c. .add() to attach an element to the list
+    d. .get(n) to get the elemenet of the list at index n; (starting from 0)
+    e. iterate through the list: for (Integer num : a)
+
+
++++++++++++++++++++++++++++++++++++++++++
