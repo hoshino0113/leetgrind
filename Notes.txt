@@ -487,3 +487,13 @@ reverse tree
 be careful for the order we do left and right compute then swap
 
 +++++++++++++++++++++++++++++++++++++++++
+
+subtree of antoher tree:
+
+note that the structure of the subtree has to be the same too!
+meaning that even though the subtree in the main tree matches all the values and poistions,
+if the subtree in the main tree keeps growing, while we already checked all the nodes in the
+target subtree, it still fails!
+
+Please see the inline comment for ideaas
++++++++++++++++++++++++++++++++++++++++++
