@@ -464,3 +464,11 @@ keep track of the most frequent char we have seen is the crux of this issue
 please see the inline comment
 
 +++++++++++++++++++++++++++++++++++++++++
+
+max tree depth
+
+recursively call the function itself! (Good old memory)
+
+it might be scary tho but now we need to use it
+and nothing to be afraid of :)
+
