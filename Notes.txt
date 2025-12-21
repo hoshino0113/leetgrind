@@ -481,3 +481,9 @@ recursively call the function itself!
 two trees are the same iff both reach their leaves without any false return
 
 +++++++++++++++++++++++++++++++++++++++++
+
+reverse tree
+
+be careful for the order we do left and right compute then swap
+
++++++++++++++++++++++++++++++++++++++++++
