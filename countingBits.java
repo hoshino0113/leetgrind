@@ -10,9 +10,8 @@ class Solution {
 
             if (lsb == 1) {
                 res += 1;
-            } else {
-                res = res;
-            }
+            } 
+    
             shiftNum -= 1;
             targetNum = targetNum >> 1;
         }
@@ -22,7 +21,6 @@ class Solution {
 
     public int[] countBits(int n) {
         int[] res = new int[n + 1];
-        int targetNum = n;
         for (int i = 0; i <= n; i++) {
             int tmp = 0;
             tmp = hammingNum(i);
