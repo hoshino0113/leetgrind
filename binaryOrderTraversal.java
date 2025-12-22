@@ -37,8 +37,7 @@ class Solution {
             //Therefore, we iterate size - 1 times until, add the val to the same level list, then we remove the node we are done with from the queue
             for (int i = 0; i < size; i++) {
                 TreeNode node = theTree.poll();
-                int val = node.val;
-                res.get(level).add(val); // add this to the place it should be
+                res.get(level).add(node.val); // add this to the place it should be
 
                 //of course, the node might have children, we add the to the tree. and increase the level by 1 later on outside the loop
                 if (node.left != null) {
