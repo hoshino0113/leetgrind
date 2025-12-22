@@ -24,7 +24,8 @@ class Solution(object):
             if nums[middle] == target:
                 return middle
             
-            if nums[middle] >= nums[l]: #meaning that everything on the LHS will be smaller, but we might have smaller number of RHS
+            if nums[middle] >= nums[l]: #meaning that everything on the LHS will be smaller than the middle,
+                #but we might have smaller number in the RHS
                 if target == nums[r]: return r
                 if target == nums[l]: return l
 
@@ -33,7 +34,8 @@ class Solution(object):
                 else:
                     l = middle + 1
 
-            else: #meanign that everything on the RHS will be larger than the middle, but we also have more larger number on LHS
+            else: #meanign that everything on the RHS will be larger than the middle, 
+                #but we also have more larger number on LHS
                 if target == nums[r]: return r
                 if target == nums[l]: return l
 
