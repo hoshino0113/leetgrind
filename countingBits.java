@@ -13,7 +13,7 @@ class Solution {
             } 
     
             shiftNum -= 1;
-            targetNum = targetNum >> 1;
+            targetNum = targetNum >>> 1;
         }
         
         return res;
