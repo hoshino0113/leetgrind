@@ -14,13 +14,13 @@ class Solution {
 
         for (String s : strs) {
             String key = "";
-            if (s.equals("") == false) {
+            if (!s.equals("")) {
                 char[] charArray = s.toCharArray();
                 Arrays.sort(charArray); // sort the char array
                 key = new String(charArray); // convert it back to string
             }
 
-            if (dictionary.containsKey(key) == false) { // if does not contain key
+            if (!dictionary.containsKey(key)) { // if does not contain key
                 dictionary.put(key, new ArrayList<>());
             }
             dictionary.get(key).add(s);
