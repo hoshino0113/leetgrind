@@ -30,9 +30,10 @@ class Solution(object):
             middle_pointer = int(floor((left_pointer + right_pointer) / 2))
             min_num = min(nums[middle_pointer], min_num)
 
-            if nums[middle_pointer] >= nums[left_pointer]: #meaning that everything on the LHS of the middle pointer will be smaller, therefore, only search RHS
+            if nums[middle_pointer] >= nums[left_pointer]: #meaning that everything on the LHS of the middle pointer will be smaller than middle,
+                #but, there might be something smaller on the RHS. therefore, only search RHS
                 left_pointer = middle_pointer + 1
-            else: #meaning that everything on the RHS will be bigger, therefore only seartch LHS
+            else: #meaning that everything on the RHS will be bigger than the middle, therefore only seartch LHS
                 right_pointer = middle_pointer - 1
         
         return min_num

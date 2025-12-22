@@ -15,7 +15,8 @@
  */
 class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        if (p == q) {return true;} //if they are null, the base condition
+        if (p == q) {return true;} //if they are null, meaning they are either empty trees or
+        // they have reach the leaves, it is the base condition
         if (p == null && q != null) {return false;}
         if (q == null && p != null) {return false;}
         if (p.val != q.val) {return false;}
