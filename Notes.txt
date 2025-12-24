@@ -533,4 +533,13 @@ valid bst??
 ya just create an arraylist and determine if its strictly increasing wtf
 +++++++++++++++++++++++++++++++++++++++++
 
+valid bst clean
+
+a better way to solve the valid bst problem.
+
+please see the inline explaination for reference
+
++++++++++++++++++++++++++++++++++++++++++
+
+
 
