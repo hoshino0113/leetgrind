@@ -528,3 +528,9 @@ If you dont, go google them or ask GPT NOW!
 
 +++++++++++++++++++++++++++++++++++++++++
 
+valid bst??
+
+ya just create an arraylist and determine if its strictly increasing wtf
++++++++++++++++++++++++++++++++++++++++++
+
+
