@@ -555,4 +555,16 @@ variables inside the Solution class.
 
 +++++++++++++++++++++++++++++++++++++++++
 
+lowest common ancesstor l:
+
+just know that 
+
+p.val < l.val < q.val
+therefore, we keep iterating until this condition is hit
+
+please see inline explaination
+
++++++++++++++++++++++++++++++++++++++++++
+
+
 
