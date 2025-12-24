@@ -541,5 +541,18 @@ please see the inline explaination for reference
 
 +++++++++++++++++++++++++++++++++++++++++
 
+kth smallest in bst
+
+basical idea: using inorder traversal (a type of depth first search) to create a sorted array.
+once we hit size of k, we stop
+
+then we simply return the k - 1 th element in the list
+
+
+There is a better solution where no list is required. It uses a counter to keep track of the number
+of execution, once hit k, terminate all execution and return the answer. Both counter and answers are 
+variables inside the Solution class.
+
++++++++++++++++++++++++++++++++++++++++++
 
 
