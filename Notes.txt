@@ -572,5 +572,16 @@ important concept to grasp, please read the inline comment!
 
 +++++++++++++++++++++++++++++++++++++++++
 
+search word with dot:
 
+Used trie. Please see the inline comment for explaination.
 
+But here are what we have learned:
+- How to check if a char is a-z? if (c >= a and c <= z)
+- We only recurse on the child that are not null, since if they are null, its guarentee a not found
+hence the runtime isn't that bad.
+
+- Be very careful for the order of the if statements, we should make sure the base case come first.
+and only do calculations after we are sure the variables are not out of range.
+
++++++++++++++++++++++++++++++++++++++++++
