@@ -585,3 +585,9 @@ hence the runtime isn't that bad.
 and only do calculations after we are sure the variables are not out of range.
 
 +++++++++++++++++++++++++++++++++++++++++
+
+matrix
+
+define the matrix in java and some of its operations
+
++++++++++++++++++++++++++++++++++++++++++
