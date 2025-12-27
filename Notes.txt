@@ -591,3 +591,10 @@ matrix
 define the matrix in java and some of its operations
 
 +++++++++++++++++++++++++++++++++++++++++
+
+modify matrix
+
+instead of traversing row by row, we do col by col so we can get the 
+correct max value;
+
++++++++++++++++++++++++++++++++++++++++++
