@@ -598,3 +598,17 @@ instead of traversing row by row, we do col by col so we can get the
 correct max value;
 
 +++++++++++++++++++++++++++++++++++++++++
+
+Set matrix zero (and clean method)
+
+Given an m x n integer matrix matrix, if an element is 0, 
+set its entire row and column to 0's.
+
+You must do it in place.
+
+There are two versions of it: one is standard and the other one is
+the preferred solution.
+
+Please see the inline comments!!
+
++++++++++++++++++++++++++++++++++++++++++
