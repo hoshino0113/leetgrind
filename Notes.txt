@@ -629,3 +629,16 @@ Please see the inline comment!
 Pay close attention to the transpose and reverse part! We don't want to undo/redo the work!
 +++++++++++++++++++++++++++++++++++++++++
 
+matrix word search
+
+We struggled with:
+- Originally thinking using states to backtrack everything, turns out it is a correct mindset,
+but struggled to structure it. We used a matrix to store all visited note in the end.
+- Determine iteration vs recursion, used recursion in the end since we don't want to be dealing
+with stack for now
+- Base conditions for dfs, order matters! From now on, we need to consider the ordering of the
+base case very carefully!
+
+Please see the inline comment for more important issues!
+
++++++++++++++++++++++++++++++++++++++++++
