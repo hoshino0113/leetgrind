@@ -621,3 +621,11 @@ Be careful for the boundary issue, please see the inline explaination
 
 +++++++++++++++++++++++++++++++++++++++++
 
+rotate image:
+
+Linear algebra time, I am considering revisit some of its contents...
+
+Please see the inline comment!
+Pay close attention to the transpose and reverse part! We don't want to undo/redo the work!
++++++++++++++++++++++++++++++++++++++++++
+
