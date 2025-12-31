@@ -642,3 +642,13 @@ base case very carefully!
 Please see the inline comment for more important issues!
 
 +++++++++++++++++++++++++++++++++++++++++
+
+clone graph
+
+First time touched on graph question, please refer to the inline comment for explainations.
+In general(for now), we need to be careful:
+- Graph much likely have cycle
+- Edge may not be explicitly defined in some graph structure
+- Becareful for the deep clone and its referencing
+
++++++++++++++++++++++++++++++++++++++++++
