@@ -652,3 +652,32 @@ In general(for now), we need to be careful:
 - Becareful for the deep clone and its referencing
 
 +++++++++++++++++++++++++++++++++++++++++
+
+class schedule graph:
+
+Please see inline comments!
+In this question, we learned:
+- Adjacency list: It is an array of list that shows the dependencies:
+
+List<Integer>[] classGraph = new ArrayList[numberOfClass];
+for (List<Integer> class : classGraph) { class = new ArrayList<>();} //do not forget to initialize every class!
+
+it looks like this:
+CS350 -> ;
+CS241 -> CS350, CS341;
+meaning: FInishing CS350 won't give you access to any other courses;
+FInishing CS241, you can then take CS350, CS341 (CS241 is a prerequisite for CS350, CS341)
+
+Again, we reused some similar things we learned from the clone graph: Set (in clone graph, its Map, they are different!)
+Set<Integer> visited = new HashSet<>();
+Map<Integer, Integer> map = new HashMap<>();
+
+visited.add(1);
+map.put(1, 1);
+visited.contains(1);
+map.containsKey(1);
+
+Again, this question emphasizes the importance of the ordering of the base case and condition removal(visiting, visited)
+
++++++++++++++++++++++++++++++++++++++++++
+
