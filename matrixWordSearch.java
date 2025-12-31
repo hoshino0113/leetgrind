@@ -25,8 +25,9 @@ class Solution {
         - The current element has the correct matching value to the word[i] */
         if (row >= board.length || col >= board[0].length ||
             row < 0 || col < 0) return false;
-        if (board[row][col] != word.charAt(wordIndex)) return false;
         if (visitorRecord[row][col]) return false;
+        if (board[row][col] != word.charAt(wordIndex)) return false;
+        
 
         if (wordIndex == word.length() - 1) return true;// only return true when everything matches and no more char to be matched
 
