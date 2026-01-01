@@ -681,3 +681,15 @@ Again, this question emphasizes the importance of the ordering of the base case 
 
 +++++++++++++++++++++++++++++++++++++++++
 
+pacific atlantic water flow 
+
+There are two solutions:
+- Use adjacency list (incomplete, not efficient and buggy, confusing, abandoned)
+- Use boolean matrix and starting from the ocean instead of inland grid.
+    a. A wrong versions
+    b. A correct versions
+please see all of them!
+
+And review array operations
+
++++++++++++++++++++++++++++++++++++++++++
