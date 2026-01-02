@@ -1,6 +1,7 @@
 import java.util.HashSet;
 import java.util.Set;
 //This is the clean version of longest consecutive sequence problem
+//There is also a graph version longestConsecutiveSeqGraph.java!! Check it out!
 class Solution {
     public int longestConsecutive(int[] nums) {
         // Edge case: empty array has no consecutive sequence

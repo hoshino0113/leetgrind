@@ -710,5 +710,6 @@ numberOfIslandRobust
 longest consecutive sequence
 
 Please refer to inline comment
+There is also a solution that uses graph!
 
 +++++++++++++++++++++++++++++++++++++++++
