@@ -693,3 +693,17 @@ please see all of them!
 And review array operations
 
 +++++++++++++++++++++++++++++++++++++++++
+
+number of island(s)
+
+Pay close attention to the conceptual correctness to the solution:
+- We should only count the island based on the structure rather than the timing of the visits
+There are two solutions, one is our solution, it is correct but conceptually incorrect, therefore not robust.
+Since we were depending on the timing of visits.
+ANother solution is robust and correct. It depends on the strucutre of the map, rather than the timing of the
+visits.
+numberOfIsland
+numberOfIslandRobust
+
++++++++++++++++++++++++++++++++++++++++++
+
