@@ -707,3 +707,8 @@ numberOfIslandRobust
 
 +++++++++++++++++++++++++++++++++++++++++
 
+longest consecutive sequence
+
+Please refer to inline comment
+
++++++++++++++++++++++++++++++++++++++++++
