@@ -713,3 +713,27 @@ Please refer to inline comment
 There is also a solution that uses graph!
 
 +++++++++++++++++++++++++++++++++++++++++
+
+Graph valid tree
+
+A graph is a tree iff:
+- No cycle
+- One component
+
+Please check the solution, here are some advice to improve our solution (from GPT, but the ideas are there):
+⚠️ Edge count check is suboptimal
+You check edges.length <= n - 2
+A valid tree must have exactly n - 1 edges
+Optimal check: edges.length != n - 1 → return false
+⚠️ Extra DFS work
+You start DFS from every node
+Even with visited, this causes unnecessary calls
+Optimal approach: one DFS/BFS from node 0
+⚠️ Redundant cycle detection
+With n - 1 edges, connectivity alone guarantees no cycles
+Explicit cycle detection becomes unnecessary
+⚠️ Data structure overhead
+HashSet<Integer> is slower than needed
+boolean[] visited is enough since nodes are 0..n-1
+
++++++++++++++++++++++++++++++++++++++++++
