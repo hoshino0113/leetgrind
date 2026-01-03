@@ -737,3 +737,12 @@ HashSet<Integer> is slower than needed
 boolean[] visited is enough since nodes are 0..n-1
 
 +++++++++++++++++++++++++++++++++++++++++
+
+number of components in undirected graph
+
+similar to counting island issue. 
+This time, we use boolean[] visited and visiting instead of hashset to make it faster
+
+good job!
+
++++++++++++++++++++++++++++++++++++++++++
