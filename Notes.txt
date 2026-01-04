@@ -746,3 +746,14 @@ This time, we use boolean[] visited and visiting instead of hashset to make it f
 good job!
 
 +++++++++++++++++++++++++++++++++++++++++
+
+encode and decode string (Codec.java):
+
+We learned Chunked Transfer Encoding, and string builder, how to convert it back to string, and how to 
+convert string builder to int. (First need to convert it to string)
+
+Please see the inline comment and code for more details!!
+
+Good job! KEEP GOING!
+
++++++++++++++++++++++++++++++++++++++++++
