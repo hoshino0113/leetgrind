@@ -757,3 +757,12 @@ Please see the inline comment and code for more details!!
 Good job! KEEP GOING!
 
 +++++++++++++++++++++++++++++++++++++++++
+meeting rooms
+first time doing interval question.
+Please see the inline comments
+
+Learned:
+- Sort the array and then check the neighbours
+- Sort method of array
+
++++++++++++++++++++++++++++++++++++++++++
