@@ -766,3 +766,12 @@ Learned:
 - Sort method of array
 
 +++++++++++++++++++++++++++++++++++++++++
+
+meeting rooms II:
+Number of room required:
+
+Use minHeap (priority queue) to solve this issue.
+Please refer to both solutions for details!
+- meetingRoomNumber.java
+- meetingRoomNumberClean.java
++++++++++++++++++++++++++++++++++++++++++
