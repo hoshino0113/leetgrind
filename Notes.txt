@@ -775,3 +775,10 @@ Please refer to both solutions for details!
 - meetingRoomNumber.java
 - meetingRoomNumberClean.java
 +++++++++++++++++++++++++++++++++++++++++
+
+insert interval:
+
+I am tired for the day.
+Please see the inline comment for thoughts and details
+
++++++++++++++++++++++++++++++++++++++++++
