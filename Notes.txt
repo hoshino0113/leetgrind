@@ -787,3 +787,9 @@ merge interval
 two solutions, both correct and efficient, but one is better and less nastier.
 
 +++++++++++++++++++++++++++++++++++++++++
+
+non-overlapping intervals
+
+please see the code
+
++++++++++++++++++++++++++++++++++++++++++
