@@ -793,3 +793,16 @@ non-overlapping intervals
 please see the code
 
 +++++++++++++++++++++++++++++++++++++++++
+
+top K frequent element:
+
+- used pq
+- learn how the comparitor in pq works:
+    (a, b) -> a - b : a comes before b is a - b is negative (min heap)
+    (a, b) -> b - a: a comes before b is b - a is negative (max heap)
+- when we are designing condition, we should double check the necessity of some lines. To see
+what i mean by that, please refer to the for loop in the code
+- review the iterator on the map entry set
+
++++++++++++++++++++++++++++++++++++++++++
+
