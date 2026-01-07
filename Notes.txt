@@ -782,3 +782,8 @@ I am tired for the day.
 Please see the inline comment for thoughts and details
 
 +++++++++++++++++++++++++++++++++++++++++
+merge interval
+
+two solutions, both correct and efficient, but one is better and less nastier.
+
++++++++++++++++++++++++++++++++++++++++++
