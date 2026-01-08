@@ -813,3 +813,12 @@ FIRST HARD QUESTION! GOOD JOB!
 The key idea involves in using two PQ: one min and one max.
 
 +++++++++++++++++++++++++++++++++++++++++
+
+merge K sorted list
+
+Please see the inline comment!
+
+- Review the merge list algorithm, especially the use of dummy pointer
+- Do not forget to update the current pointer during the merging!
+
++++++++++++++++++++++++++++++++++++++++++
