@@ -822,3 +822,18 @@ Please see the inline comment!
 - Do not forget to update the current pointer during the merging!
 
 +++++++++++++++++++++++++++++++++++++++++
+climbing stairs
+
+First DP leetcode question!
+
+We:
+- Reviewed the Fibonacci sequence
+- Explored why the FS applies to this questions
+The core idea of DP is Solve a problem by breaking it into smaller overlapping subproblems, 
+solve each subproblem once, and reuse those results to build the final answer.
+And a question can only be solved using DP iff:
+- The optimal solution of a problem can be constructed from the optimal solutions of its subproblems.
+- The same subproblems are solved repeatedly
+
+Good luck! Keep climbing UP !!
++++++++++++++++++++++++++++++++++++++++++
