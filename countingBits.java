@@ -1,3 +1,5 @@
+//There is another solution uses Dynamic Programming technique.
+
 class Solution {
     public int hammingNum(int n) {
         int res = 0;
