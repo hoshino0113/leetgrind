@@ -806,3 +806,10 @@ what i mean by that, please refer to the for loop in the code
 
 +++++++++++++++++++++++++++++++++++++++++
 
+find median
+
+FIRST HARD QUESTION! GOOD JOB!
+
+The key idea involves in using two PQ: one min and one max.
+
++++++++++++++++++++++++++++++++++++++++++

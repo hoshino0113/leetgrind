@@ -4,7 +4,7 @@ Every element in the max heap is smaller than every element in the min heap, exc
 - maxHeap.peek == minHeap.peek. This is allowed
 While we are performing the addNum, we need to balance the numbers in both heap, to make sure their
 sizes differ by at most 1;
-
+Please take a look at how we performed the balancing
 */
 class MedianFinder {
     PriorityQueue<Integer> dataSmall;
@@ -33,12 +33,14 @@ class MedianFinder {
 
         if (this.dataSmall.peek() >= num) {
             dataSmall.offer(num);
+            //perform balancing
             if (dataSmall.size() > dataLarge.size() + 1) {
                 dataLarge.offer(dataSmall.poll());
             }
             return;
         } else {
             dataLarge.offer(num);
+            //perform balancing
             if (dataLarge.size() > dataSmall.size() + 1) {
                 dataSmall.offer(dataLarge.poll());
             }
@@ -51,7 +53,7 @@ class MedianFinder {
 
         int small = dataSmall.peek();
         int large = dataLarge.peek();
-
+        //do not forget to return a double instead of an int
         return (((double) small + large) / 2);
     }
 }
