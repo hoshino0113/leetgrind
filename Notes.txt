@@ -838,3 +838,10 @@ And a question can only be solved using DP iff:
 
 Good luck! Keep climbing UP !!
 +++++++++++++++++++++++++++++++++++++++++
+
+pascal's triangle
+
+use DP
+
++++++++++++++++++++++++++++++++++++++++++
+
