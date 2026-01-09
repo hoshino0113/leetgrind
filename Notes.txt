@@ -851,3 +851,12 @@ defeated
 
 +++++++++++++++++++++++++++++++++++++++++
 
+coin change
+
+whenever your solution gets messy, you are probably wrong
+
+Our solution was flawed and fixed later on, but its is very slow.(commneted out)
+
+Please see the inline comment for the explantion
+
++++++++++++++++++++++++++++++++++++++++++
