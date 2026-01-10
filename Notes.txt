@@ -865,3 +865,10 @@ longest increasing sequence
 DP at its best (not really but its freaking hard)
 
 +++++++++++++++++++++++++++++++++++++++++
+longest common sequence
+
+difficult question, but the dp solution is classic and should be remembered!
+
+Thank you ChatGPT!
+
++++++++++++++++++++++++++++++++++++++++++
