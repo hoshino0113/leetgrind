@@ -3,7 +3,7 @@ We need to use DP to solve this. The technique used to solve this question is cl
 
 First, we need to understand these concepts and incentives:
 - For two strings text1 = abcde and text2 = ace, the longest common sequence is ace.
-- Let i and j represent the ith char in text1, jth char in text2
+- Let i and j represent the number of characters considered (prefix length), not a direct index.
 - Therefore, text1.charAt(i - 1) = ith char in text1. If i = 2; then the char is text1.charAt(2 - 1) -> b
 - When we are comparing these two words, we intuitively follow these steps:
     a. text1.charAt(0) vs text2.charAt(0) -> match, so lsc = a, length = 1
@@ -17,8 +17,8 @@ First, we need to understand these concepts and incentives:
     get stuck. Therefore, we have to skip one of the char in one word to keep comparing. If we skip b, the lcs from the text1
     part would have one less char left that we can use to consider the + 1;
     To reflect this, we build a lcs matrix to record every lsc we have calculated so far.
-    Therefore, we only skip the char that brings the minimal impact to the lcs. In the lcs matrix, we always pick the 
-    number thats larger as the value for the current comparison with skip operation.
+    Therefore, We conceptually try skipping each character and keep the option that results in the larger LCS value.
+    In the lcs matrix, we always pick the number thats larger as the value for the current comparison with skip operation.
 - We then simply need the lcs[m][n] to get the lcs between text1 and text2. (At mth char in text1 and nth char in text2,
 what is the longest common sequence?)
 
