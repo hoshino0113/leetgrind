@@ -27,7 +27,7 @@ because if we encounter a node that is already in the 'visiting' set, it means w
 - We keep track of the completely visited nodes in a set called 'visited'. For this set, we are sure 
 there is no cycle involving these nodes, therefore, only add the node to this list after recursively 
 visiting all its neighbours and confirming no cycle. Also, we can skip this node if we encounter it again as
-it is visited and no cycle involves it.
+it is visited and no cycle involves it. (e.g a course that is the prerequisite of multiple other courses)
 - Remember to remove the node from 'visiting' set once all its neighbours are processed and no cycle is found.
 */
 

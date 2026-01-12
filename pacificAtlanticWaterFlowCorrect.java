@@ -16,6 +16,7 @@ class Solution {
         if (col >= heights[row].length) return;
 
         //now we are within bounds, check if ocean[row][col] is true already
+        //this prevents re-visiting the same grid(potential endless loop)
         //if so, it means we already visited the node, return
         if(ocean[row][col]) return;
 
