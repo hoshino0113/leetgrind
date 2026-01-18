@@ -6,7 +6,8 @@ We iterate through the array, and for each number n:
 - We then replace this element with n;
 - Therefore, we need an array lls such that:
     a. lls[i] represent the longest increasing sequence with length i + 1, ends with element lls[i] (the largest
-    in the sequence). eg lls[5] = a means the longest subsequence has the length of 6, end with char a.
+    in the sequence). eg lls[5] = 6, means the longest subsequence has the length of 6, with smallest value 6.
+    Note: Largest in the sequence is different from smallest that has the length l.
 - We then perform lower bound search (a special binary search) to find the lls[i] we need to update:
     a. To find the lls[i] that is the first element that is >= n;
 
