@@ -79,7 +79,7 @@ The runtime for this is O(n), and the space is also 3O(n).
 There is a better way to solve it in space O(1).
 
 +++++++++++++++++++++++++++++++++++++++++
-
+maxSubarrayDP: use DP to solve it in java
 max_subarray:
 
 The core idea is that, we keep a max_sum at all time, and update it whenever needed. This 'whenever needed' depends on:
