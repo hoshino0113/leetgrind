@@ -346,3 +346,24 @@ INNER JOIN products p
 GROUP BY p.id, p.name;
 
 Q8
+SELECT p.id, p.name
+FROM product p
+LEFT JOIN order_items oi
+  ON p.id = oi.product_id
+GROUP BY p.id, p.name
+HAVING COUNT(oi.order_id) = 0;
+
+Q9
+SELECT u.id, u.name
+FROM users u
+JOIN orders o
+  ON u.id = o.user_id
+GROUP BY u.id, u.name
+HAVING SUM(o.total) > (
+  SELECT AVG(user_total)
+  FROM (
+    SELECT user_id, SUM(total) AS user_total
+    FROM orders
+    GROUP BY user_id
+  ) t
+);
