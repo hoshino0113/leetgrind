@@ -367,3 +367,31 @@ HAVING SUM(o.total) > (
     GROUP BY user_id
   ) t
 );
+
+Q10
+SELECT u.id, u.name
+FROM users u
+JOIN orders o
+  ON u.id = o.user_id
+GROUP BY u.id, u.name
+HAVING COUNT(o.id) > (
+  SELECT COUNT(o2.id) * 1.0 / COUNT(DISTINCT u2.id)
+  FROM users u2
+  LEFT JOIN orders o2
+    ON u2.id = o2.user_id
+);
+
+Q11
+SELECT u.id,
+       u.name,
+       COALESCE(t.user_revenue, 0) AS total_revenue
+FROM users u
+LEFT JOIN (
+  SELECT o.user_id,
+         SUM(oi.quantity * oi.price) AS user_revenue
+  FROM orders o
+  JOIN order_items oi
+    ON o.id = oi.order_id
+  GROUP BY o.user_id
+) t
+  ON u.id = t.user_id;
