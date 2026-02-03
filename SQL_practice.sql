@@ -472,3 +472,7 @@ SELECT
     COUNT(*) AS user_count
 FROM users
 GROUP BY age_group;
+
+Q5
+There is no GROUP BY, so there is nothing to count for.
+For each non-aggregated clause in the SELECT, it must be in GROUP BY.
