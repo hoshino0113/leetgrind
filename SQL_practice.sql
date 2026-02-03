@@ -261,7 +261,7 @@ HAVING SUM(salary) > (SELECT AVG(salary)
 ???
 
 H3
-It returns the number of employees for each department whose salaries are higher than the company's average salary
+It returns the number of employees for each department whose salaries are higher than the company's average salary'
 
 
 R1
@@ -395,3 +395,18 @@ LEFT JOIN (
   GROUP BY o.user_id
 ) t
   ON u.id = t.user_id;
+
+
+DAY3 Q1
+SELECT u.id, u.name
+FROM users u
+WHERE u.id IN (SELECT o.user_id
+               FROM orders o
+);
+
+Q2
+SELELCT u.id, u.name
+FROM users u
+WHERE u.id NOT IN (SELECT o.user_id
+			       FROM orders o
+);
