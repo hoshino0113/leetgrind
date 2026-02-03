@@ -426,3 +426,27 @@ WHERE order_count > (SELECT AVG(order_count)
 );
 
 
+CASE WHEN and WITH
+Q1
+SELECT *,
+	CASE
+		WHEN age < 18
+		THEN "Minor"
+		ELSE "Adult"
+	END AS status
+FROM users
+
+Q2
+Query A:
+SELECT id, amount
+FROM transactions
+WHERE amount > 500
+
+Query B:
+SELECT *,
+	CASE
+		WHEN amount > 500
+		THEN 1
+		ELSE 0
+	END AS is_large
+FROM transactions
