@@ -410,3 +410,19 @@ FROM users u
 WHERE u.id NOT IN (SELECT o.user_id
 			       FROM orders o
 );
+
+
+Q3
+SELECT user_id
+FROM (SELECT user_id, COUNT(order_id) AS order_count
+	  FROM orders
+	  GROUP BY user_id
+	  ) t1
+WHERE order_count > (SELECT AVG(order_count)
+					FROM (SELECT user_id, COUNT(*) AS order_count
+					      FROM orders
+						  GROUP BY user_id
+					)t2
+);
+
+
