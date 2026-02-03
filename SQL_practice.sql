@@ -450,3 +450,25 @@ SELECT *,
 		ELSE 0
 	END AS is_large
 FROM transactions
+
+Q3
+SELECT country,
+	COALESCE(SUM(CASE
+		WHEN amount > 1000
+		THEN 1
+		ELSE 0
+	END), 0),
+	COUNT(order_id)
+FROM orders
+GROUP BY country;
+
+Q4
+SELECT
+    CASE
+        WHEN age < 25 THEN 'Under25'
+        WHEN age < 50 THEN '25to49'
+        ELSE '50plus'
+    END AS age_group,
+    COUNT(*) AS user_count
+FROM users
+GROUP BY age_group;
