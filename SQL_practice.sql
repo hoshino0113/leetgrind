@@ -476,3 +476,42 @@ GROUP BY age_group;
 Q5
 There is no GROUP BY, so there is nothing to count for.
 For each non-aggregated clause in the SELECT, it must be in GROUP BY.
+
+
+Window Function
+Q1
+SELECT
+	name,
+	salary,
+	AVG(salary) OVER () AS avg_salary
+FROM employees
+
+Q2
+SELECT 
+	name,
+	department,
+	salary,
+	RANK() OVER (
+					PARTITION BY department
+					ORDER BY salary DESC
+	)
+FROM employees
+
+Q3
+SELECT
+	name,
+	department,
+	salary,
+FROM (
+	SELECT
+	name,
+	department,
+	salary,
+	ROW_NUMBER() OVER (
+					PARTITION BY department
+					ORDER BY salary DESC
+		)
+	 	AS rn
+	FROM employees
+) t
+WHERE rn = 1;
