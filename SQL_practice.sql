@@ -561,9 +561,61 @@ WHERE NOT EXISTS(
 
 Q5: Let user_id = uid for this question:
 
-SELECT u.uid, COUNT(o.order_id) AS total_orders, COALESCE(SUM(o.revenue), 0) AS total_revenue
+SELECT
+  u.uid,
+  COUNT(o.order_id) AS total_orders,
+  COALESCE(SUM(o.revenue), 0) AS total_revenue
 FROM users u
 LEFT JOIN orders o
-	ON u.uid = o.uid
-GROUP BY u.uid
+  ON u.uid = o.uid
+GROUP BY u.uid;
 
+
+Q6:
+SELECT u.uid
+FROM users u
+WHERE NOT EXISTS (
+				SELECT 1
+				FROM events e
+				WHERE e.event_type = 'refund' AND u.uid = e.uid
+) AND u.uid IN (
+				SELECT o.uid
+				FROM orders o
+				GROUP BY o.uid
+				HAVING COUNT(o.order_id) >= 1
+);
+
+Q7:
+SELECT
+	o.uid,
+	o.order_time,
+	SUM(o.revenue) OVER (
+		PARTITION BY o.uid
+	) AS lifetime_spend
+FROM orders o
+
+Q8
+SELECT o.uid, o.order_id, o.revenue, 
+		DENSE_RANK() OVER (
+			PARTITION BY o.uid
+			ORDER BY o.revenue DESC
+		) AS rank_in_user
+FROM orders o;
+
+Q9 Top order per user
+SELECT
+  t.uid,
+  t.order_id,
+  t.revenue
+FROM (
+  SELECT
+    o.uid,
+    o.order_id,
+    o.revenue,
+    ROW_NUMBER() OVER (
+      PARTITION BY o.uid
+      ORDER BY o.revenue DESC
+    ) AS revenue_rank
+  FROM orders o
+) t
+WHERE t.revenue_rank = 1;
