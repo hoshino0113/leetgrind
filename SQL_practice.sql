@@ -515,3 +515,55 @@ FROM (
 	FROM employees
 ) t
 WHERE rn = 1;
+
+Day 5 practice questions
+
+Q1
+SELECT user_id
+FROM users
+WHERE signup_time > 2026-01-02
+
+Q2
+SELECT event_type, COUNT(user_id)
+FROM events
+GROUP BY event_type
+
+Q3
+SELECT user_id
+FROM (SELECT user_id, AVG(revenue)
+		FROM orders
+		GROUP BY user_id
+		HAVING AVG(revenue) > 100
+	)t1
+
+Q4
+SELECT user_id
+FROM users u
+LEFT JOIN orders o
+	ON u.user_id = o.user_id
+GROUP BY u.user_id
+HAVING COUNT(order_id) = 0
+
+Q4b
+SELECT user_id
+FROM users u
+LEFT JOIN orders o
+	ON u.user_id = o.user_id
+WHERE o.order_id = NULL
+
+Q4c
+SELECT user_id
+FROM users u
+WHERE NOT EXISTS(
+	SELECT 1
+	FROM orders o	WHERE o.uid = u.uid
+);
+
+Q5: Let user_id = uid for this question:
+
+SELECT u.uid, COUNT(o.order_id) AS total_orders, COALESCE(SUM(o.revenue), 0) AS total_revenue
+FROM users u
+LEFT JOIN orders o
+	ON u.uid = o.uid
+GROUP BY u.uid
+
